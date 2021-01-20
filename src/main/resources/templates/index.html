@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        body{
+            font-family: Ubuntu;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+<span th:text="'Hello ' + ${serverLocation} + '!'"></span>
 
-Hello Localhost!
-<span th:text="'Hello ' + ${serverLocation}"></span>
-<table>
-    <tr th:each="todo : ${todoList}">
-        <td th:text="${todo.id}"> </td>
-        <td th:text="${todo.title}"> </td>
-    </tr>
-</table>
+<div class="container">
 
+    <div class="row" th:each="todo:${todoList}">
+        <div class="col">
+            <a th:text="${todo.id}"></a>
+        </div>
+        <div class="col">
+            <a th:text="${todo.title}"></a>
+        </div>
+        <div class = "col">
+            <button type="submit" class="btn btn-primary">Complete</button>
+        </div>
+        <div clss = "col">
+            <button type="button" class="btn btn-outline-danger">Opps, not complete</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
 </body>
 </html>
