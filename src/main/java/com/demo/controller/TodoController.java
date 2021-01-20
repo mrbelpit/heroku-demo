@@ -20,6 +20,7 @@ public class TodoController {
   @GetMapping("")
   public String showLandingPage(Model model){
     model.addAttribute("todoList", todoService.getAllTodos());
+    model.addAttribute("serverLocation", System.getenv("SERVER_LOCATION"));
     return "index";
   }
 }

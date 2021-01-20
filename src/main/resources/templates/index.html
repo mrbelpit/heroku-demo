@@ -7,6 +7,7 @@
 <body>
 
 Hello Localhost!
+<span th:text="'Hello ' + ${serverLocation}"></span>
 <table>
     <tr th:each="todo : ${todoList}">
         <td th:text="${todo.id}"> </td>
